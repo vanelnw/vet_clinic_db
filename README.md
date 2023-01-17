@@ -26,9 +26,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Vet-clinic-db] <a name="about-project"></a>
 
-**[Vet-clinic-database]** is a relational database to create the initial data structure for a vet clinic. we will create a table to store animals' information, insert some data into it, and query it.
+**[Vet-clinic-db]** is a relational database to create the initial data structure for a vet clinic. we will create a table to store animals' information, insert some data into it, and query it.
 
 ## 🛠 Built With <a name="built-with"></a>
 
