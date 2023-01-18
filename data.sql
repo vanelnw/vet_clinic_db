@@ -59,3 +59,7 @@ UPDATE animals SET owner_id = ( CASE
                   END
 
 );
+
+
+INSERT INTO vets (name, age, date_of_graduation) VALUES ('William Tatcher', 45, '2000-04-23'),
+('Maisy Smith', 26, '2019-01-17'),('Stephanie Mendez', 64, '1981-05-04'),('Jack Harkness', 38, '2008-06-08');
