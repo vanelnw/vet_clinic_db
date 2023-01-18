@@ -23,3 +23,10 @@ CREATE TABLE specializations (
     vet_id INTEGER REFERENCES vets (id),
     PRIMARY KEY (species_id, vet_id)
 );
+
+CREATE TABLE visits (
+    animal_id INTEGER REFERENCES animals (id),
+    vet_id INTEGER REFERENCES vets (id),
+    visit_date TIMESTAMP NOT NULL,
+    PRIMARY KEY (animal_id, vet_id, visit_date)
+);
