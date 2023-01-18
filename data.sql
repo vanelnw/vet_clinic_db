@@ -33,3 +33,29 @@ VALUES ('Blossom', '1998-10-13', 17, true, 3);
 INSERT INTO animals (name, date_of_birth, weight_kg, neutered, escape_attempts)
 VALUES ('Ditto', '2022-05-14', 22, true, 4);
 
+/* Insert into owners and species */
+INSERT INTO owners (full_name,age) VALUES ('Sam Smith', 34),('Jennifer Orwell', 19),('Bob', 45),('Melody Pond', 77),('Dean Winchester', 14),('Jodie Whittaker', 38);
+INSERT INTO species (name) VALUES ('Pokemon'),('Digimon');
+
+/* UPDATE*/
+
+UPDATE animals SET species_id = (CASE
+                                    WHEN name LIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+                                    ELSE (SELECT id FROM species WHERE name = 'Pokemon')
+                                    END
+                                );
+
+UPDATE animals SET owner_id = ( CASE
+                                    WHEN name = 'Agumon' THEN (SELECT id FROM owners WHERE full_name = 'Sam Smith')
+                                    WHEN Name = 'Gabumon' THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+                                    WHEN Name = 'Pikachu' THEN (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell')
+                                    WHEN name = 'Devimon' THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+                                    WHEN name = 'Plantmon' THEN (SELECT id FROM owners WHERE full_name = 'Bob')
+                                    WHEN name = 'Charmander' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+                                    WHEN name = 'Squirtle' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+                                    WHEN name = 'Blossom' THEN (SELECT id FROM owners WHERE full_name = 'Melody Pond')
+                                    WHEN name = 'Angemon' THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+                                    WHEN name = 'Boarmon' THEN (SELECT id FROM owners WHERE full_name = 'Dean Winchester')
+                  END
+
+);
